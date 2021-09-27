@@ -1,0 +1,23 @@
+extends ./layout/index
+
+block contenido 
+    script(type='text/javascript').
+        const widget = document.createElement('script');
+        widget.setAttribute('src','https://cdn.belvo.io/belvo-widget-1-stable.js');
+        document.body.appendChild(widget);
+    main.container.mt-5
+        .row
+            h1=pagina
+            if (errores)
+                .alert.col.alert-success.text-center=errores.mensaje + ' ' 
+            if (datoCOP)
+                .alert.col.alert-success.text-center= 'Movimientos en Pesos'
+                p=JSON.stringify(datoCOP)
+            if (datoPEN)
+                .alert.col.alert-success.text-center= 'Movimientos en SOLES'
+                p=JSON.stringify(datoPEN)
+            if (datoUSD)
+                .alert.col.alert-success.text-center= 'Movimientos en DOLARES'
+                p=JSON.stringify(datoUSD)
+            
+            

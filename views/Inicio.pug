@@ -1,0 +1,13 @@
+extends ./layout/index
+
+block contenido 
+    script(type='text/javascript').
+        const widget = document.createElement('script');
+        widget.setAttribute('src','https://cdn.belvo.io/belvo-widget-1-stable.js');
+        document.body.appendChild(widget);
+    main.container.mt-5
+        .row
+            h1=pagina
+            
+            
+            

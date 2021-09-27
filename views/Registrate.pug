@@ -1,0 +1,36 @@
+extends ./layout/index
+
+block contenido 
+    main.container.mt-5
+        h1.text-center.mt-5 #{pagina}
+        .row
+            .col-md-12
+                
+                if (errores)
+                    each error  in errores
+                        .alert.col.alert-danger.text-center=error.mensaje
+                if (resultadoLogin)
+                    each dato in resultadoLogin
+                        .alert.col.alert-success.text-center=dato.mensaje + ' ' + dato.banco
+            .row.justify-content-center.col
+                .col-md-8
+                    form(action="/Registrate" method="POST")
+                        .form-group
+                            label(for="UserName") UserName
+                            input#UserName(type="text",placeholder="Tu User" , name ="user1" , class="form-control")
+                        .form-group
+                            label(for="Password") Password
+                            input#pass1(type="password",placeholder="Tu Pass" , name ="pass1" , class="form-control")
+                        .form-group     
+                            label(for="Banco") Banco
+                            select#banco1.block.appearance-none.w-full.bg-gray-200.border.border-gray-200.text-gray-700.py-3.px-4.pr-8.rounded.leading-tight(class='focus:outline-none focus:bg-white focus:border-gray-500' ,name ="banco1")
+                                option(disabled='' selected='' value='') -- Seleccione --
+                                option(value='bcp') Banco de Crédito de Per&uacute;
+                                option(value='telecredito') Telecr&eacute;dito - BCP
+                                option(value='pe_bbva_netcash') BBVA Net Cash Peru
+                                option(value='interbank_corp_pe') Interbank Empresas
+                                option(value='scotia_pe_corp') Empresas - Scotiabank Peru
+                                option(value='scotia_pe') Scotiabank Peru
+                                option(value='telebanking_corp_pe') Telebanking Scotiabank Empresas Peru
+                                option(value='davivienda') Davivienda
+                        input.btn.btn-succes.btn-block(type="submit")
