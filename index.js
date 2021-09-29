@@ -8,7 +8,7 @@ db.authenticate()
     .then(()=> console.log('db connect'))
     .catch(error=> console.log(error))
 */
-const port =  40000;
+const port =  process.env.PORT || 40000;
 
 
 app.set('view engine', 'pug')
