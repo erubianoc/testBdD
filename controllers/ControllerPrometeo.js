@@ -109,7 +109,9 @@ const datosCuenta = async (req,res)=>{
                             });*/
             }
             else {
-                errores.push({mensaje:`error al login para el Banco ${a.banco} con el siguiente error ${datoLogin.status}`});
+                errores.push({mensaje:`error al login para el Banco ${a.banco} con el siguiente error  ${datoLogin.status}`});
+                errores.push({mensaje:`error al login para el user ${a.user} con el siguiente error  ${datoLogin.status}`});
+                errores.push({mensaje:`error al login para el pass  ${a.pass} con el siguiente error  ${datoLogin.status}`});
                 res.render('TusDatos' ,{
                     pagina:"TusDatos",
                     errores
