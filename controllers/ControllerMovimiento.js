@@ -7,9 +7,9 @@ const datosMovi = async  (req,res)=>{
 
     console.log("llegue a movimiento" , a.banco)
     console.log("llegue a movimiento con esta clave" , a.clave)
-    datoCOP = consumoServicio(a.id,a.clave,"COP");
-    datoPEN = consumoServicio(a.id,a.clave,"PEN");
-    datoUSD = consumoServicio(a.id,a.clave,"USD");
+    var datoCOP = consumoServicio(a.id,a.clave,"USD");
+    var datoPEN = consumoServicio(a.id,a.clave,"PEN");
+    var datoUSD = consumoServicio(a.id,a.clave,"USD");
     if (movimientos.length > 0 )
     {
         res.render('Movimientos', {

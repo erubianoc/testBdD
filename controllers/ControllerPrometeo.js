@@ -120,8 +120,6 @@ const datosCuenta = async (req,res)=>{
         catch (error){
             console.log(error)
         }
-
-
         
     }
     catch (error){

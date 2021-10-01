@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import {dataID} from '../models/datalink.js';
+//import {dataID} from '../models/datalink.js'; //SE ELIMINA PERSISTENCIA DE DATOS
 import a  from '../models/datoUser.js';
 import b from '../models/datoUserdav.js';
 import c  from '../models/datoUserscotia.js';
@@ -38,6 +38,7 @@ const altaCliente = async (req,res)=>{
     else {
 
         try {
+            /* SE ELIMINA PERSISTENCIA DE DATOS
             dataID.removeAttribute('id');
             await dataID.create({
                 
@@ -45,7 +46,7 @@ const altaCliente = async (req,res)=>{
                 clave,
                 banco1,
                 pass1
-            })
+            })*/
             a.user = user1;
             a.banco= banco1;
             a.pass = pass1
